@@ -196,6 +196,22 @@
     <Compile Include="Migrations\201910210718541_UpdateNameInExistingMembershipTypes.Designer.cs">
       <DependentUpon>201910210718541_UpdateNameInExistingMembershipTypes.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201910210741276_AddBirthdayColumnInCustomer.cs" />
+    <Compile Include="Migrations\201910210741276_AddBirthdayColumnInCustomer.Designer.cs">
+      <DependentUpon>201910210741276_AddBirthdayColumnInCustomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201910210746260_RemoveBirthdayColumnInCustomer.cs" />
+    <Compile Include="Migrations\201910210746260_RemoveBirthdayColumnInCustomer.Designer.cs">
+      <DependentUpon>201910210746260_RemoveBirthdayColumnInCustomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201910210747315_AddBirthdayColumnInCustomerAgain.cs" />
+    <Compile Include="Migrations\201910210747315_AddBirthdayColumnInCustomerAgain.Designer.cs">
+      <DependentUpon>201910210747315_AddBirthdayColumnInCustomerAgain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201910210751509_MakeBirthdayColumnInCustomerNullable.cs" />
+    <Compile Include="Migrations\201910210751509_MakeBirthdayColumnInCustomerNullable.Designer.cs">
+      <DependentUpon>201910210751509_MakeBirthdayColumnInCustomerNullable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Customer.cs" />
@@ -301,6 +317,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201910210718541_UpdateNameInExistingMembershipTypes.resx">
       <DependentUpon>201910210718541_UpdateNameInExistingMembershipTypes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201910210741276_AddBirthdayColumnInCustomer.resx">
+      <DependentUpon>201910210741276_AddBirthdayColumnInCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201910210746260_RemoveBirthdayColumnInCustomer.resx">
+      <DependentUpon>201910210746260_RemoveBirthdayColumnInCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201910210747315_AddBirthdayColumnInCustomerAgain.resx">
+      <DependentUpon>201910210747315_AddBirthdayColumnInCustomerAgain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201910210751509_MakeBirthdayColumnInCustomerNullable.resx">
+      <DependentUpon>201910210751509_MakeBirthdayColumnInCustomerNullable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

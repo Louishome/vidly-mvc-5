@@ -6,3 +6,8 @@
 }
 
 <h2>@Model.Name</h2>
+<li>Membership Type: @Model.MembershipType.Name</li>
+@if (Model.BirthDay != null)
+{
+    <li>BirthDate: @Model.BirthDay.ToString()</li>
+}
