@@ -7,6 +7,18 @@ namespace Vidly.Controllers
 {
     public class CustomersController : Controller
     {
+        private ApplicationDbContext m_context;
+
+        public CustomersController()
+        {
+            m_context = new ApplicationDbContext();
+        }
+
+        protected override void Dispose(bool disposing)
+        {
+            m_context.Dispose();
+        }
+
         public ViewResult Index()
         {
             var customers = GetCustomers();
@@ -24,13 +36,6 @@ namespace Vidly.Controllers
             return View(customer);
         }
 
-        private IEnumerable<Customer> GetCustomers()
-        {
-            return new List<Customer>
-            {
-                new Customer { Id = 1, Name = "John Smith" },
-                new Customer { Id = 2, Name = "Mary Williams" }
-            };
-        }
+        private IEnumerable<Customer> GetCustomers() => m_context.Customers.ToList();
     }
 }
