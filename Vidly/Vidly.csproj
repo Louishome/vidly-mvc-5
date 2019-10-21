@@ -16,10 +16,12 @@
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <MvcBuildViews>false</MvcBuildViews>
     <UseIISExpress>true</UseIISExpress>
-    <IISExpressSSLPort />
-    <IISExpressAnonymousAuthentication />
-    <IISExpressWindowsAuthentication />
-    <IISExpressUseClassicPipelineMode />
+    <IISExpressSSLPort>44300</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication>enabled</IISExpressAnonymousAuthentication>
+    <IISExpressWindowsAuthentication>disabled</IISExpressWindowsAuthentication>
+    <IISExpressUseClassicPipelineMode>false</IISExpressUseClassicPipelineMode>
+    <Use64BitIISExpress />
+    <UseGlobalApplicationHostFile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -166,10 +168,32 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201910210246216_InitialModel.cs" />
+    <Compile Include="Migrations\201910210246216_InitialModel.Designer.cs">
+      <DependentUpon>201910210246216_InitialModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201910210335325_AddIsSubscribedToNewsletter.cs" />
+    <Compile Include="Migrations\201910210335325_AddIsSubscribedToNewsletter.Designer.cs">
+      <DependentUpon>201910210335325_AddIsSubscribedToNewsletter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201910210340430_AddMembershipType.cs" />
+    <Compile Include="Migrations\201910210340430_AddMembershipType.Designer.cs">
+      <DependentUpon>201910210340430_AddMembershipType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201910210342482_PopulateMembershipTypes.cs" />
+    <Compile Include="Migrations\201910210342482_PopulateMembershipTypes.Designer.cs">
+      <DependentUpon>201910210342482_PopulateMembershipTypes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201910210520002_ApplyAnnotationsToCustomerName.cs" />
+    <Compile Include="Migrations\201910210520002_ApplyAnnotationsToCustomerName.Designer.cs">
+      <DependentUpon>201910210520002_ApplyAnnotationsToCustomerName.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Customer.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\MembershipType.cs" />
     <Compile Include="Models\Movie.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
@@ -247,6 +271,23 @@
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201910210246216_InitialModel.resx">
+      <DependentUpon>201910210246216_InitialModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201910210335325_AddIsSubscribedToNewsletter.resx">
+      <DependentUpon>201910210335325_AddIsSubscribedToNewsletter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201910210340430_AddMembershipType.resx">
+      <DependentUpon>201910210340430_AddMembershipType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201910210342482_PopulateMembershipTypes.resx">
+      <DependentUpon>201910210342482_PopulateMembershipTypes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201910210520002_ApplyAnnotationsToCustomerName.resx">
+      <DependentUpon>201910210520002_ApplyAnnotationsToCustomerName.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
