@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
 using System.Web.Mvc;
@@ -30,13 +31,14 @@ namespace Vidly.Controllers
 
         public ActionResult New()
         {
-            var viewModel = new NewCustomerViewModel
+            var viewModel = new CustomerFormViewModel
             {
                 MembershipTypes = m_context.MembershipTypes.ToList(),
             };
             return View(viewModel);
         }
 
+        [HttpPost]
         public ActionResult Create(Customer customer)
         {
             m_context.Customers.Add(customer);
@@ -50,10 +52,31 @@ namespace Vidly.Controllers
 
             if (customer == null)
                 return HttpNotFound();
-
-            return View(customer);
+            var viewModel = new CustomerFormViewModel
+            {
+                Customer = customer,
+                MembershipTypes = m_context.MembershipTypes.ToList()
+            };
+            return View("CustomerForm", viewModel);
         }
 
         private IEnumerable<Customer> GetCustomers() => m_context.Customers.Include(c => c.MembershipType).ToList();
+
+        public ActionResult Edit(int id)
+        {
+            var customer = m_context.Customers.SingleOrDefault(c => c.Id == id);
+            if (customer == null)
+            {
+                return HttpNotFound();
+            }
+
+            var viewModel = new CustomerFormViewModel()
+            {
+                Customer = customer,
+                MembershipTypes = m_context.MembershipTypes.ToList()
+            };
+
+            return View("CustomerForm", viewModel);
+        }
     }
 }
