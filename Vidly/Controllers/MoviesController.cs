@@ -41,5 +41,25 @@ namespace Vidly.Controllers
 
             return View(movie);
         }
+
+        public ActionResult New()
+        {
+            var modelView = new MovieFormViewModel
+            {
+                GenreTypes = m_dbContext.GenreTypes.ToList()
+            };
+            return View("MovieForm", modelView);
+        }
+
+        public ActionResult Save(MovieFormViewModel viewModel)
+        {
+            if (viewModel.Movie.Id == 0)
+            {
+                m_dbContext.Movies.Add(viewModel.Movie);
+            }
+
+            m_dbContext.SaveChanges();
+            return RedirectToAction("Index", "Movies");
+        }
     }
 }
