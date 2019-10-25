@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
 using System.Web.Mvc;
@@ -46,6 +47,7 @@ namespace Vidly.Controllers
         {
             var modelView = new MovieFormViewModel
             {
+                Movie = new Movie(),
                 GenreTypes = m_dbContext.GenreTypes.ToList()
             };
             return View("MovieForm", modelView);
@@ -71,6 +73,7 @@ namespace Vidly.Controllers
         {
             if (viewModel.Movie.Id == 0)
             {
+                viewModel.Movie.DateAdded = DateTime.Now;
                 m_dbContext.Movies.Add(viewModel.Movie);
             }
             else
